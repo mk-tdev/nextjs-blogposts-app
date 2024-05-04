@@ -2,6 +2,7 @@ import { Post } from "@/app-configs/app-types";
 import Banner from "@/components/home/banner";
 import Featured from "@/components/home/featured";
 import { getFeaturedPosts } from "@/lib/post-util";
+import Head from "next/head";
 
 export const getStaticProps = async () => {
   const featuredPosts = getFeaturedPosts();
@@ -15,10 +16,14 @@ export const getStaticProps = async () => {
 
 const HomePage = ({ featuredPosts }: { featuredPosts: Post[] }) => {
   return (
-    <div>
+    <>
+      <Head>
+        <title>Blogs</title>
+        <meta name="description" content="Explore my latest blog posts" />
+      </Head>
       <Banner />
       <Featured posts={featuredPosts} />
-    </div>
+    </>
   );
 };
 

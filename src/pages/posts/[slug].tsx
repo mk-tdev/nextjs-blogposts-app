@@ -1,6 +1,7 @@
 import { Post } from "@/app-configs/app-types";
 import PostDetail from "@/components/posts/post-details";
 import { getPostData, getPostsFiles } from "@/lib/post-util";
+import Head from "next/head";
 
 export const getStaticProps = async (context: { params: { slug: string } }) => {
   const { params } = context;
@@ -38,7 +39,14 @@ export const getStaticPaths = async () => {
 };
 
 const PostDetails = ({ selectedPost }: { selectedPost: Post }) => {
-  return <PostDetail post={selectedPost} />;
+  return (
+    <>
+      <Head>
+        <title>{selectedPost.title}</title>
+        <meta name="description" content={selectedPost.excerpt} />
+      </Head>
+      <PostDetail post={selectedPost} />;
+    </>
+  );
 };
-
 export default PostDetails;

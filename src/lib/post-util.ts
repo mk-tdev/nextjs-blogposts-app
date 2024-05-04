@@ -30,7 +30,6 @@ export const getAllPostsData = () => {
     return getPostData(fileName);
   });
 
-  console.log({ allPosts });
   return allPosts;
 };
 
