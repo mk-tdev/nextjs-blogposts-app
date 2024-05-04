@@ -2,8 +2,13 @@ import { Post } from "@/app-configs/app-types";
 import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import darcula from "react-syntax-highlighter/dist/cjs/styles/prism/darcula";
+import tsx from "react-syntax-highlighter/dist/cjs/languages/prism/typescript";
+import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
+
+SyntaxHighlighter.registerLanguage("tsx", tsx);
+SyntaxHighlighter.registerLanguage("jsx", jsx);
 
 const PostItem = (props: Post) => {
   const {
@@ -46,7 +51,7 @@ const PostItem = (props: Post) => {
         const { language, value } = code;
 
         return (
-          <SyntaxHighlighter language={language} style={dark}>
+          <SyntaxHighlighter language={language} style={darcula}>
             {value}
           </SyntaxHighlighter>
         );

@@ -20,7 +20,7 @@ This blog post covers the following topics:
 
 ![Some Image](post-1.jpg)
 
-```js
+```tsx
 const blogPost = {
   title: "My First Blog Post",
   date: "2023-04-02",

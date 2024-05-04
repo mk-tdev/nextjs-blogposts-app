@@ -24,3 +24,15 @@ portal for notifications
 round-up:
 
 back-end with api-routes and mongodb
+
+===============
+
+Deployment
+
+Standard Build 
+ next build for server side app (requires NodeJS server)
+
+Full Static Build
+ by running next-export
+ hosting at any server (no NodeJS server required)
+ cannot use API routes, cannot use page revalidations

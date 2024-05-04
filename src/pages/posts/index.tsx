@@ -1,5 +1,4 @@
 import { Post } from "@/app-configs/app-types";
-import { dummyPosts } from "@/app-configs/dummyData";
 import PostGrid from "@/components/posts/post-grid";
 import { getAllPostsData } from "@/lib/post-util";
 import Head from "next/head";

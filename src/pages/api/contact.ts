@@ -25,7 +25,7 @@ export default async function handler(
     // (e.g., save the data to a database, send an email, etc.)
     const contactData = { name, email, message };
 
-    const dbURL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+    const dbURL = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_host}/${process.env.mongodb_database}?retryWrites=true&w=majority`;
     const mongoClient = await MongoClient.connect(dbURL);
     try {
       const db = mongoClient.db();
